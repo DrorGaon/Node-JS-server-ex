@@ -1,12 +1,12 @@
 import express from 'express'
-import { utilService } from './util-service.js'
+import { bugService } from './services/bug-service.js'
 
 const app = express()
 
 app.get('/', (req, res) => res.send('Hello there'))
 
 app.get('/api/bug', (req, res) => {
-    utilService.readJSONFile('./data/bugs.json')
+    bugService.query()
         .then((data) => res.send(data))
 })
 

@@ -2,7 +2,7 @@ import fs from 'fs'
 
 export const utilService = {
     readJSONFile,
-    writeToJSONFile
+    writeToJSONFile,
 }
 
 function readJSONFile(path) {
