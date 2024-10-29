@@ -1,6 +1,7 @@
 import express from 'express'
 import { bugService } from './services/bug-service.js'
 import { loggerService } from './services/logger.service.js'
+import { title } from 'process'
 
 const app = express()
 
@@ -12,6 +13,23 @@ app.get('/api/bug', (req, res) => {
         .catch(err => {
             loggerService.error(err)
             res.status(500).send('Problem getting bugs')
+        })
+})
+
+app.get('/api/bug/save', (req, res) => {
+    
+    const bugToSave = {
+        _id: req.query._id,
+        title: req.query.title,
+        description: req.query.description,
+        severity: req.query.severity,
+    }
+
+    bugService.save(bugToSave)
+        .then((bug) => res.send(bug))
+        .catch(err => {
+            loggerService.error(err)
+            res.status(500).send('Problem saving bug')
         })
 })
 

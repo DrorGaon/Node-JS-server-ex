@@ -10,7 +10,7 @@
         "_id" : "c1002",
         "title" : "Infinite Loop Detected",
         "description" : "proccess went into infinite loop and was killed",
-        "severity" : 5,
+        "severity" : 4,
         "createdAt" : 1542107359454
     },
     {
