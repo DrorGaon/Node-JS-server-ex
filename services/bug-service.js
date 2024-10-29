@@ -9,6 +9,7 @@ export const bugService = {
     query,
     get,
     save,
+    remove,
 }
 
 function query(){
@@ -31,6 +32,13 @@ function save(bugToSave){
     }
 
     return _saveToFile().then(() => bugToSave)
+}
+
+function remove(bugId){
+    const bugIdx = bugs.findIndex(bug => bug._id === bugId)
+    if(bugIdx < 0) return Promise.reject(`Cannot find bug with id ${bugId}`)
+    bugs.splice(bugIdx, 1)
+    return _saveToFile().then(() => bugs)
 }
 
 function _saveToFile(){
