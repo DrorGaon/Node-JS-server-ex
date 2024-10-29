@@ -1,0 +1,37 @@
+[
+    {
+        "_id" : "c1001",
+        "title" : "Cannot save",
+        "description" : "problem when clicking Save",
+        "severity" : 3,
+        "createdAt" : 1542107359454
+    },
+    {
+        "_id" : "c1002",
+        "title" : "Infinite Loop Detected",
+        "description" : "proccess went into infinite loop and was killed",
+        "severity" : 5,
+        "createdAt" : 1542107359454
+    },
+    {
+        "_id" : "c1003",
+        "title" : "Keyboard not found",
+        "description" : "user has no keyboard",
+        "severity" : 2,
+        "createdAt" : 1542107359454
+    },
+    {
+        "_id" : "c1004",
+        "title" : "Interent explorer",
+        "description" : "user is using interenet explorer, all proccesses will take 5 times longer than normal",
+        "severity" : 1,
+        "createdAt" : 1542107359454
+    },
+    {
+        "_id" : "c1005",
+        "title" : "Coffee not found",
+        "description" : "developer doesn't have coffee, major delays expected",
+        "severity" : 5,
+        "createdAt" : 1542107359454
+    }
+]
