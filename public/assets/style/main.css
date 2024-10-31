@@ -94,6 +94,7 @@ nav a:hover {
     margin: 5px;
     text-align: center;
     padding: 5px;
+    min-width: 180px;
 }
 
 .bug-preview a {
@@ -102,9 +103,6 @@ nav a:hover {
 
 .bug-preview span {
     color: gold;
-}
-
-.info-actions {
 }
 
 .container {
