@@ -20,10 +20,10 @@ app.get('/api/bug', (req, res) => {
 app.get('/api/bug/save', (req, res) => {
     
     const bugToSave = {
-        _id: req.query._id,
-        title: req.query.title,
-        description: req.query.description,
-        severity: req.query.severity,
+        _id: req.query._id || '',
+        title: req.query.title || '',
+        description: req.query.description || '',
+        severity: +req.query.severity || 0,
     }
 
     bugService.save(bugToSave)
@@ -36,8 +36,16 @@ app.get('/api/bug/save', (req, res) => {
 
 app.get('/api/bug/:bugId', (req, res) => {
     const { bugId } = req.params
+    const second = 1000
+    let visitedBugIds = req.cookies.visitedCount || []
+
     bugService.get(bugId)
-        .then((bug) => res.send(bug))
+        .then((bug) => {
+            if (!visitedBugIds.includes(bug._id)) visitedBugIds.push(bug._id)
+            if (visitedBugIds.length > 3) return res.status(401).send('Wait a sec')
+            res.cookie('visitedCount', visitedBugIds, {maxAge: 7 * second})
+            res.send(bug)
+        })
         .catch(err => {
             loggerService.error(err)
             res.status(500).send('Problem getting bug')
