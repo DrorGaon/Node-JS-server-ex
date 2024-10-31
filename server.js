@@ -1,11 +1,12 @@
 import express from 'express'
 import { bugService } from './services/bug-service.js'
 import { loggerService } from './services/logger.service.js'
-import { title } from 'process'
+import cookieParser from 'cookie-parser'
 
 const app = express()
 
-app.get('/', (req, res) => res.send('Hello there'))
+app.use(express.static('public'))
+app.use(cookieParser())
 
 app.get('/api/bug', (req, res) => {
     bugService.query()
