@@ -108,3 +108,14 @@ nav a:hover {
 .container {
     padding-inline: 8rem;
 }
+
+.bug-filter{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.filter-severity{
+    margin: 0;
+    margin-block-end: 10px;
+}
