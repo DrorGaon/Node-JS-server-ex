@@ -52,7 +52,7 @@ app.get('/api/bug/:bugId', (req, res) => {
         })
 })
 
-app.get('/api/bug/:bugId/remove', (req, res) => {
+app.delete('/api/bug/:bugId', (req, res) => {
     const { bugId } = req.params
     bugService.remove(bugId)
         .then((bugs) => res.send(bugs))
@@ -60,6 +60,6 @@ app.get('/api/bug/:bugId/remove', (req, res) => {
             loggerService.error(err)
             res.status(500).send('Problem removing bug')
         })
-})
+}) 
 
 app.listen(3030, () => loggerService.info('Server listening on port http://127.0.0.1:3030/'))

@@ -33,7 +33,7 @@ function getById(bugId) {
 
 function remove(bugId) {
     return axios
-        .get(BASE_URL + bugId + '/remove')
+        .delete(BASE_URL + bugId)
         .then(res => res.data)
         .catch(err => {throw err.response.data})
 }
