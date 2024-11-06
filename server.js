@@ -7,6 +7,7 @@ const app = express()
 
 app.use(express.static('public'))
 app.use(cookieParser())
+app.use(express.json())
 
 app.get('/api/bug', (req, res) => {
     bugService.query()
@@ -14,23 +15,6 @@ app.get('/api/bug', (req, res) => {
         .catch(err => {
             loggerService.error(err)
             res.status(500).send('Problem getting bugs')
-        })
-})
-
-app.get('/api/bug/save', (req, res) => {
-    
-    const bugToSave = {
-        _id: req.query._id || '',
-        title: req.query.title || '',
-        description: req.query.description || '',
-        severity: +req.query.severity || 0,
-    }
-
-    bugService.save(bugToSave)
-        .then((bug) => res.send(bug))
-        .catch(err => {
-            loggerService.error(err)
-            res.status(500).send('Problem saving bug')
         })
 })
 
@@ -61,5 +45,29 @@ app.delete('/api/bug/:bugId', (req, res) => {
             res.status(500).send('Problem removing bug')
         })
 }) 
+
+app.post('/api/bug/', (req, res) => {
+
+    const bugToSave = req.body
+
+    bugService.save(bugToSave)
+        .then((bug) => res.send(bug))
+        .catch(err => {
+            loggerService.error(err)
+            res.status(500).send('Problem adding bug')
+        })
+})
+
+app.put('/api/bug/:bugId', (req, res) => {
+
+    const bugToSave = req.body
+
+    bugService.save(bugToSave)
+        .then(savedBug => res.send(savedBug))
+        .catch((err) => {
+            loggerService.error('Cannot update bug', err)
+            res.status(400).send('Cannot update bug', err)
+        })
+})
 
 app.listen(3030, () => loggerService.info('Server listening on port http://127.0.0.1:3030/'))
