@@ -52,9 +52,13 @@ function save(bug) {
     }
 }
 
-function getFilterFromSearchParams(){
+function getFilterFromSearchParams(searchParams){
+    
+    const text = searchParams.get('text') || ''
+    const minSeverity = searchParams.get('minSeverity') || 0
+
     return {
-        text: '',
-        minSeverity: 0,
+        text,
+        minSeverity,
     }
 }
