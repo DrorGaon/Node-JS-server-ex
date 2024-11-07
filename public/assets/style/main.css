@@ -120,5 +120,14 @@ nav a:hover {
 
 .filter-severity{
     margin: 0;
+    margin-block-end: 5px;
+}
+
+.sort-by{
     margin-block-end: 10px;
+}
+
+.sort-by h2{
+    margin: 0;
+    margin-block-end: 5px;
 }

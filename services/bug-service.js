@@ -15,13 +15,20 @@ export const bugService = {
 function query(filterBy){
 
     let filteredBugs = structuredClone(bugs)
-    
+
     if(filterBy.text){
         const regExp = new RegExp(filterBy.text, 'i')
         filteredBugs = filteredBugs.filter(bug => (regExp.test(bug.title) || regExp.test(bug.description)))
     }
     if (filterBy.minSeverity){
         filteredBugs = filteredBugs.filter(bug => bug.severity >= filterBy.minSeverity)
+    }
+    if(filterBy.sortBy){
+        if(filterBy.sortBy === 'title'){
+            filteredBugs.sort((a, b) => a.title.localeCompare(b.title))
+        } else {
+            filteredBugs.sort((a, b) => a[filterBy.sortBy] - b[filterBy.sortBy] )
+        }
     }
     return Promise.resolve(filteredBugs)
 }

@@ -47,9 +47,11 @@ function getFilterFromSearchParams(searchParams){
     
     const text = searchParams.get('text') || ''
     const minSeverity = searchParams.get('minSeverity') || 0
+    const sortBy = searchParams.get('sortBy') || ''
 
     return {
         text,
         minSeverity,
+        sortBy,
     }
 }

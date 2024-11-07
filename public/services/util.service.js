@@ -49,7 +49,7 @@ function getTruthyValues(obj) {
     const newObj = {}
     for (const key in obj) {
         const value = obj[key]
-        if (value || value === 0) {
+        if (value) {
             newObj[key] = value
         }
     }
