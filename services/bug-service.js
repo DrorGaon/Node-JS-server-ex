@@ -12,8 +12,18 @@ export const bugService = {
     remove,
 }
 
-function query(){
-    return Promise.resolve(bugs)
+function query(filterBy){
+
+    let filteredBugs = structuredClone(bugs)
+    
+    if(filterBy.text){
+        const regExp = new RegExp(filterBy.text, 'i')
+        filteredBugs = filteredBugs.filter(bug => (regExp.test(bug.title) || regExp.test(bug.description)))
+    }
+    if (filterBy.minSeverity){
+        filteredBugs = filteredBugs.filter(bug => bug.severity >= filterBy.minSeverity)
+    }
+    return Promise.resolve(filteredBugs)
 }
 
 function get(bugId){

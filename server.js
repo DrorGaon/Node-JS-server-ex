@@ -10,7 +10,13 @@ app.use(cookieParser())
 app.use(express.json())
 
 app.get('/api/bug', (req, res) => {
-    bugService.query()
+    
+    const filterBy = {
+        text: req.query.text || '',
+        minSeverity: req.query.minSeverity || 0,
+    }
+
+    bugService.query(filterBy)
         .then((bugs) => res.send(bugs))
         .catch(err => {
             loggerService.error(err)

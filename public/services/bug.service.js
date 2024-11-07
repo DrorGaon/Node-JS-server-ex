@@ -8,22 +8,13 @@ export const bugService = {
     getFilterFromSearchParams,
 }
 
-function query(filterBy) {
+function query(filterBy = {}) {
     return axios
-        .get(BASE_URL)
+        .get(BASE_URL, {params: filterBy})
         .then(res => res.data)
-        .then(bugs => {
-            if(filterBy.text){
-                const regExp = new RegExp(filterBy.text, 'i')
-                bugs = bugs.filter(bug => (regExp.test(bug.title) || regExp.test(bug.description)))
-            }
-            if (filterBy.minSeverity){
-                bugs = bugs.filter(bug => bug.severity >= filterBy.minSeverity)
-            }
-            return bugs
-        })
         .catch(err => {throw err.response.data})
 }
+
 function getById(bugId) {
     return axios
         .get(BASE_URL + bugId)
