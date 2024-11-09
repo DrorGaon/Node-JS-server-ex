@@ -2,36 +2,110 @@
     {
         "_id" : "c1001",
         "title" : "Cannot save",
-        "description" : "problem when clicking Save",
+        "description" : "Problem when clicking Save",
         "severity" : 3,
-        "createdAt" : 1542107359454
+        "createdAt" : 1542107359454,
+        "lables": [
+            "dev",
+            "needs-cr"
+        ]
     },
     {
         "_id" : "c1002",
         "title" : "Infinite Loop Detected",
-        "description" : "proccess went into infinite loop and was killed",
+        "description" : "Proccess went into infinite loop and was killed",
         "severity" : 4,
-        "createdAt" : 1542107359454
+        "createdAt" : 1542107359454,
+        "lables": [
+            "critical",
+            "needs-cr"
+        ]
     },
     {
         "_id" : "c1003",
         "title" : "Keyboard not found",
-        "description" : "user has no keyboard",
+        "description" : "User has no keyboard",
         "severity" : 2,
-        "createdAt" : 1542107359454
+        "createdAt" : 1542107359454,
+        "lables": [
+            "dev",
+            "major-bug"
+        ]
     },
     {
         "_id" : "c1004",
         "title" : "Interent explorer",
-        "description" : "user is using interenet explorer, all proccesses will take 5 times longer than normal",
+        "description" : "User is using interenet explorer, all proccesses will take 5 times longer than normal",
         "severity" : 1,
-        "createdAt" : 1542107359454
+        "createdAt" : 1542107359454,
+        "lables": [
+            "low-priority",
+            "famous"
+        ]
     },
     {
         "_id" : "c1005",
         "title" : "Coffee not found",
-        "description" : "developer doesn't have coffee, major delays expected",
+        "description" : "Developer doesn't have coffee, major delays expected",
         "severity" : 5,
-        "createdAt" : 1542107359454
+        "createdAt" : 1542107359454,
+        "lables": [
+            "dev",
+            "high-priority"
+        ]
+    },
+    {
+        "_id" : "c1006",
+        "title" : "Major bug",
+        "description" : "This is one big bug I'll tell you what",
+        "severity" : 5,
+        "createdAt" : 1542107359454,
+        "lables": [
+            "critical",
+            "dev"
+        ]
+    },
+    {
+        "_id" : "c1007",
+        "title" : "Minor bug",
+        "description" : "Pretty chill bug, ain't that big a deal",
+        "severity" : 2,
+        "createdAt" : 1542107359454,
+        "lables": [
+            "popular",
+            "low-priority"
+        ]
+    },
+    {
+        "_id" : "c1008",
+        "title" : "Lazy coding",
+        "description" : "The devs were pretty lazy, so things might break...",
+        "severity" : 3,
+        "createdAt" : 1542107359454,
+        "lables": [
+            "dev",
+            "normal-priority"
+        ]
+    },
+    {
+        "_id" : "c1009",
+        "title" : "Visual artifacting",
+        "description" : "Problems rendring 3d animation",
+        "severity" : 2,
+        "createdAt" : 1542107359454,
+        "lables": [
+            "low-priority"
+        ]
+    },
+    {
+        "_id" : "c1010",
+        "title" : "Server was turned off",
+        "description" : "The intern turned off the server by mistake. You're fired Jerry, I hope you know that.",
+        "severity" : 5,
+        "createdAt" : 1542107359454,
+        "lables": [
+            "dev",
+            "critical"
+        ]
     }
 ]
