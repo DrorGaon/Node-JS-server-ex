@@ -2,6 +2,7 @@ import express from 'express'
 import { bugService } from './services/bug-service.js'
 import { loggerService } from './services/logger.service.js'
 import cookieParser from 'cookie-parser'
+import { userService } from './services/user.service.js'
 
 const app = express()
 
@@ -76,5 +77,17 @@ app.put('/api/bug/:bugId', (req, res) => {
             res.status(400).send('Cannot update bug', err)
         })
 })
+
+app.post('/api/auth/signup', (req, res) => {
+    const credentials = req.body
+
+    userService.save(credentials)
+        .then(user => {
+            res.cookie = ('loginToken',userService.getLoginToken(user))
+            res.send(user)
+        })
+        .catch(err => loggerService.error(err))
+})
+
 
 app.listen(3030, () => loggerService.info('Server listening on port http://127.0.0.1:3030/'))
