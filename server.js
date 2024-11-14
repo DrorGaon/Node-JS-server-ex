@@ -100,4 +100,9 @@ app.post('/api/auth/login', (req, res) => {
         .catch(err => res.status(400).send('Cannot log in', err))
 })
 
+app.post('/api/auth/logout', (req, res) => {
+    res.clearCookie()
+    res.send('logged out')
+})
+
 app.listen(3030, () => loggerService.info('Server listening on port http://127.0.0.1:3030/'))
