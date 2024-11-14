@@ -10,6 +10,7 @@ utilService.readJSONFile('./data/users.json')
 export const userService = {
     save,
     getLoginToken,
+    checkLogin,
 }
 
 function save(user){
@@ -21,6 +22,18 @@ function save(user){
             _id: user._id,
             fullname: user.fullname,
         }))
+}
+
+function checkLogin({ password, fullname }){
+    let user = users.find(user => user.password === password && user.fullname === fullname)
+    if (user) {
+        user = {
+            _id: user._id,
+			fullname: user.fullname,
+        }
+        return Promise.resolve(user)
+    }
+    return Promise.reject('no user found')
 }
 
 function getLoginToken(user){

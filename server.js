@@ -86,8 +86,18 @@ app.post('/api/auth/signup', (req, res) => {
             res.cookie = ('loginToken',userService.getLoginToken(user))
             res.send(user)
         })
-        .catch(err => loggerService.error(err))
+        .catch(err => res.status(400).send('Cannot sign up', err))
 })
 
+app.post('/api/auth/login', (req, res) => {
+    const credentials = req.body
+
+    userService.checkLogin(credentials)
+        .then(user => {
+            res.cookie = ('loginToken',userService.getLoginToken(user))
+            res.send(user)
+        })
+        .catch(err => res.status(400).send('Cannot log in', err))
+})
 
 app.listen(3030, () => loggerService.info('Server listening on port http://127.0.0.1:3030/'))
