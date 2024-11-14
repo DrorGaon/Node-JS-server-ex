@@ -5,10 +5,10 @@
         "description" : "Problem when clicking Save",
         "severity" : 3,
         "createdAt" : 1648434944718,
-        "lables": [
-            "dev",
-            "needs-cr"
-        ]
+        "creator":{
+            "_id": "A1J9K",
+            "fullname": "Alice Johnson"
+        } 
     },
     {
         "_id" : "c1002",
@@ -16,10 +16,10 @@
         "description" : "Proccess went into infinite loop and was killed",
         "severity" : 4,
         "createdAt" : 1650283756349,
-        "lables": [
-            "critical",
-            "needs-cr"
-        ]
+        "creator":{
+            "_id": "B2S8M",
+            "fullname": "Bob Smith"
+        } 
     },
     {
         "_id" : "c1003",
@@ -27,10 +27,10 @@
         "description" : "User has no keyboard",
         "severity" : 2,
         "createdAt" : 1653567009377,
-        "lables": [
-            "dev",
-            "major-bug"
-        ]
+        "creator":{
+            "_id": "F6A4P",
+            "fullname": "Fiona Apple"
+        } 
     },
     {
         "_id" : "c1004",
@@ -38,10 +38,10 @@
         "description" : "User is using interenet explorer, all proccesses will take 5 times longer than normal",
         "severity" : 1,
         "createdAt" : 1656893708537,
-        "lables": [
-            "low-priority",
-            "famous"
-        ]
+        "creator":{
+            "_id": "A1J9K",
+            "fullname": "Alice Johnson"
+        } 
     },
     {
         "_id" : "c1005",
@@ -49,10 +49,10 @@
         "description" : "Developer doesn't have coffee, major delays expected",
         "severity" : 5,
         "createdAt" : 1660430099565,
-        "lables": [
-            "dev",
-            "high-priority"
-        ]
+        "creator":{
+            "_id": "C3B7N",
+            "fullname": "Charlie Brown"
+        } 
     },
     {
         "_id" : "c1006",
@@ -60,10 +60,10 @@
         "description" : "This is one big bug I'll tell you what",
         "severity" : 5,
         "createdAt" : 1669724476774,
-        "lables": [
-            "critical",
-            "dev"
-        ]
+        "creator":{
+            "_id": "F6A4P",
+            "fullname": "Fiona Apple"
+        } 
     },
     {
         "_id" : "c1007",
@@ -71,10 +71,10 @@
         "description" : "Pretty chill bug, ain't that big a deal",
         "severity" : 2,
         "createdAt" : 1688956123182,
-        "lables": [
-            "popular",
-            "low-priority"
-        ]
+        "creator":{
+            "_id": "E5N5T",
+            "fullname": "Edward Norton"
+        } 
     },
     {
         "_id" : "c1008",
@@ -82,10 +82,10 @@
         "description" : "The devs were pretty lazy, so things might break...",
         "severity" : 3,
         "createdAt" : 1689572838932,
-        "lables": [
-            "dev",
-            "normal-priority"
-        ]
+        "creator":{
+            "_id": "C3B7N",
+            "fullname": "Charlie Brown"
+        } 
     },
     {
         "_id" : "c1009",
@@ -93,9 +93,10 @@
         "description" : "Problems rendring 3d animation",
         "severity" : 2,
         "createdAt" : 1694933204704,
-        "lables": [
-            "low-priority"
-        ]
+        "creator":{
+            "_id": "D4P6R",
+            "fullname": "Diana Prince"
+        } 
     },
     {
         "_id" : "c1010",
@@ -103,9 +104,9 @@
         "description" : "The intern turned off the server by mistake. You're fired Jerry, I hope you know that.",
         "severity" : 5,
         "createdAt" : 1721505839939 ,
-        "lables": [
-            "dev",
-            "critical"
-        ]
+        "creator":{
+            "_id": "D4P6R",
+            "fullname": "Diana Prince"
+        } 
     }
 ]
